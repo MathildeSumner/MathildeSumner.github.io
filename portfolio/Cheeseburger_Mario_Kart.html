@@ -1,30 +1,40 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <meta charset="UTF-8">
-    <title>Ceramics</title>
-    <link rel="stylesheet" href="../portfolio/portfolio2.css">
+  <meta charset="UTF-8">
+  <title>Ceramics</title>
+
+  <!-- CSS is in the same /portfolio folder as this file -->
+  <link rel="stylesheet" href="portfolio2.css">
+
+  <!-- fonts (optional but nice to match main page) -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Londrina+Sketch&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 </head>
-<a href="portfolio.html" class="back-button">← Back to Portfolio</a>
+
 <body>
-    <section id="project">
-        
-    </section>
+  <!-- (optional) same header as portfolio.html -->
 
-    <!-- Slideshow Section for the image carousel -->
-    <section id="slideshow">
-        <div class="carousel-container">
-            <!-- Main image display -->
-            <img class="displayed-img" src="" alt="">
-            
-            <!-- Thumbnail images will be added here dynamically -->
-            <div class="thumb-bar">
-                <!-- Thumbnails will go here dynamically -->
-            </div>
-        </div>
-    </section>
 
-    <!-- Link to JavaScript file -->
-    <script src="../portfolio/portfolio2.js"></script>
+  <!-- 🔥 back button now inside <body> and will use .back-button styles -->
+  <a href="portfolio.html" class="back-button">← Back to Portfolio</a>
+
+  <section id="project">
+    <!-- JS will fill this -->
+  </section>
+
+  <!-- Slideshow Section for the image carousel -->
+  <section id="slideshow">
+    <div class="carousel-container">
+      <!-- Main image display -->
+      <img class="displayed-img" src="" alt="">
+      <!-- Thumbnails -->
+      <div class="thumb-bar"></div>
+    </div>
+  </section>
+
+  <!-- JS in same /portfolio folder -->
+  <script src="portfolio2.js"></script>
 </body>
 </html>

@@ -93,3 +93,47 @@ h2 {
     padding: 30px;       
     text-align: center;  
 }
+
+/* Back button styles */
+a.back-button,
+a.back-button:link,
+a.back-button:visited,
+a.back-button:hover,
+a.back-button:active {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  margin: 20px 40px;
+  padding: 8px 18px;
+
+  border-radius: 999px;      /* rounded pill */
+  border: none;
+
+  background-color: #3bb89b; /* your green */
+  color: #000 !important;    /* black arrow/text */
+  text-decoration: none !important;
+
+  font-family: "Montserrat", sans-serif;
+  font-weight: 600;
+
+  box-shadow: 0 2px 4px rgba(0,0,0,0.25);
+  cursor: pointer;
+}
+
+a.back-button:hover {
+  background-color: #87D8C5; /* hover green */
+  transform: translateY(-1px);
+  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
+}
+
+/* Rounded green box around the project title */
+#project h1 {
+    background-color: #3bb89b;   /* same green as your cards */
+    color: #000;                 /* keep the text black */
+    border-radius: 15px;         /* rounded corners */
+    padding: 20px 40px;          /* space around the word */
+    display: inline-block;       /* so the box wraps the text */
+    margin: 40px auto 20px;      /* space above/below */
+  }
+  
