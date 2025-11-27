@@ -63,6 +63,21 @@
                 "a screenshot from a website showing the contact page and a picture of a girl playing the flute",
                 "a screenshot from a website of the contact/about page from the Colorado Symphony"
             ]
+        },
+        {
+            "name": "Cheeseburger Mario Kart",
+            "subdomain": "Cheeseburger_Mario_Kart",
+            "category": ["DigitalDesign"],
+            "abstract": "This web design project for the Colorado Symphony involved redesigning their website using provided images and information. Working as part of a group, my main focus was on redesigning the contact and about pages. The goal was to create an engaging, user-friendly layout that effectively showcased the symphony's mission, events, and contact information, while reflecting the organization's artistic and professional spirit.",
+            "description": "mario cart",
+            "images": ["mario1", "mario2", "mario3","mario4", "mario5"],
+            "alt_text": [
+                "a screenshot from a website showing seasonal performances for the Colorado Symphony",
+                "a screenshot from a website showing the contact page and a picture of a girl playing the flute",
+                "a screenshot from a website of the contact/about page from the Colorado Symphony",
+                "a screenshot from a website of the contact/about page from the Colorado Symphony",
+                "a screenshot from a website of the contact/about page from the Colorado Symphony"
+            ]
         }
     ]
 }
