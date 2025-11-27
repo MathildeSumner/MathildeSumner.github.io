@@ -160,6 +160,26 @@ header {
     transform: scale(0.95); 
 }
 
+.back-button {
+    display: inline-block;
+    margin: 20px 40px;
+    padding: 8px 18px;
+    border-radius: 999px;
+    border: none;
+    background-color: #35d1a6; /* use the same green you use for your cards */
+    color: #000;
+    font-family: "Montserrat", sans-serif;
+    font-weight: 600;
+    text-decoration: none;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.25);
+    cursor: pointer;
+  }
+  
+  .back-button:hover {
+    transform: translateY(-1px);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
 
 @media (min-width: 900px) {
     .project p {
