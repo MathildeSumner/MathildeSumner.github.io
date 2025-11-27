@@ -4,15 +4,18 @@
       "name": "Lamps",
       "subdomain": "Lamps",
       "category": ["PhysicalArt"],
-      "folder": "Lamps",
+      "folder": "lamps",                          
       "abstract": "This project is a matching set of midcentury-inspired table lamps, one made from laser-cut walnut and the other from pink acrylic, each fully functional and over eight inches tall. I used SketchUp and Illustrator to create precise 3D models and orthographic drawings that defined finger joints, slots, and base geometry before fabrication. The final lamps showcase a balance of digital design and hands-on making, highlighting my skills in CAD, laser cutting, and iterative prototyping.",
       "description": "For this project, I set out to design and build a cohesive pair of midcentury-style table lamps that translated clean digital geometry into functional physical objects. I began by modeling the forms in SketchUp and creating orthographic drawings in Illustrator, carefully planning finger joints, slot widths, and base details to work with laser-cut materials. During fabrication, I operated laser cutters and woodworking tools to cut, stain, and assemble the components, troubleshooting issues like material thickness variations and imperfect cuts as they came up. I tested different adhesives, finishes, and construction methods until the lamps were both sturdy and visually polished. The finished pieces demonstrate my ability to move from concept to detailed CAD to a refined physical product using digital fabrication tools.",
       "images": ["lamps1", "lamps2", "lamps3", "lamps4", "lamps5", "lamps6", "lamps7"],
       "alt_text": [
-        "hamburger style mario cart with french fry umbrella from the front",
-        "hamburger style mario cart with french fry umbrella from the front from 6 angles",
-        "hamburger style mario cart with french fry umbrella from the front with a zoom on the wheels and another view",
-        "hamburger style mario cart with french fry umbrella from the front with a zoom on the steering wheel and the side"
+        "a midcentury-style wooden lamp and a pink acrylic lamp side by side",
+        "close up of the wooden laser-cut lamp showing finger joints",
+        "close up of the pink acrylic lamp illuminated",
+        "orthographic drawing of the lamp design",
+        "laser-cut lamp parts laid out before assembly",
+        "assembled lamps on a table",
+        "both finished lamps lit up together"
       ]
     },
 
@@ -28,7 +31,7 @@
         "hamburger style mario cart with french fry umbrella from the front",
         "hamburger style mario cart with french fry umbrella from the front from 6 angles",
         "hamburger style mario cart with french fry umbrella from the front with a zoom on the wheels and another view",
-        "hamburger style mario cart with french fry umbrella from the front with a zoom on the stearing wheel and the side"
+        "hamburger style mario cart with french fry umbrella from the front with a zoom on the steering wheel and the side"
       ]
     },
 
@@ -74,7 +77,7 @@
       "name": "Ceramics",
       "subdomain": "Ceramics",
       "category": ["PhysicalArt"],
-      "folder": "Ceramics",
+      "folder": "ceramics",                   
       "abstract": "This ceramics project includes a set of three bowls in different sizes, a small plate with a sun in the middle, and a lidded sugar bowl, all designed with a sunset gradient in warm hues of gold, orange, and pink. A matching floral pattern adds elegance, tying the pieces together into a cohesive design. Functional yet artistic, this set is perfect for everyday use or as a beautiful display of craftsmanship.",
       "description": "This ceramics project features a beautifully coordinated set of dishes, including three bowls of varying sizes and a lidded sugar bowl. Each piece showcases a stunning sunset gradient on the sides, transitioning through warm hues like gold, orange, and pink. Complementing the gradient is an elegant flower pattern in matching tones, adding a cohesive and artistic touch to the collection. The design balances functionality and aesthetics, making the set both practical for everyday use and a charming display of craftsmanship.",
       "images": ["ceramics1", "ceramics2", "ceramics3", "ceramics4", "ceramics5", "ceramics6"],
