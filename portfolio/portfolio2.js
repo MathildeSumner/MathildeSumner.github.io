@@ -1,79 +1,121 @@
-// Get the subdomain from the URL (e.g., Cheeseburger_Mario_Kart from Cheeseburger_Mario_Kart.html)
-let subdomain = window.location.href.slice(
-    window.location.href.lastIndexOf("/") + 1,
-    window.location.href.lastIndexOf(".")
-  );
-  console.log("Subdomain:", subdomain);
+// Run after DOM is ready
+document.addEventListener("DOMContentLoaded", () => {
+    fetch("../portfolio/portfolio.json")
+      .then((response) => response.json())
+      .then((data) => {
+        const projects = data.projects;
   
-  // Load portfolio data
-  fetch("../portfolio/portfolio.json")
-    .then((response) => response.json())
-    .then((projects) => {
-      findProjectInJSON(projects);
-    })
-    .catch((err) => console.log(`Error: ${err}`));
+        const listContainer = document.getElementById("projects");
+        const detailContainer = document.getElementById("project");
   
-  // Find the matching project by subdomain
-  function findProjectInJSON(projects) {
-    for (let i = 0; i < projects.projects.length; i++) {
-      if (projects.projects[i].subdomain === subdomain) {
-        buildPage(projects.projects[i]);
-        break;
-      }
-    }
+        // If we're on the main portfolio page
+        if (listContainer) {
+          buildIndexPage(projects, listContainer);
+        }
+  
+        // If we're on a project detail page
+        if (detailContainer) {
+          buildDetailPage(projects, detailContainer);
+        }
+      })
+      .catch((err) => console.log(`Error: ${err}`));
+  });
+  
+  // ---------- MAIN INDEX PAGE ----------
+  
+  function buildIndexPage(projects, container) {
+    projects.forEach((project) => {
+      const card = document.createElement("article");
+      card.className = "project-card";
+  
+      const link = document.createElement("a");
+      link.className = "project-link";
+      link.href = `${project.subdomain}.html`;
+  
+      // Cover image
+      const img = document.createElement("img");
+      img.className = "project-cover";
+      img.src = `../portfolio/img/${project.folder}/${project.images[0]}.png`;
+      img.alt = project.alt_text && project.alt_text[0] ? project.alt_text[0] : project.name;
+  
+      // Text block
+      const textDiv = document.createElement("div");
+      textDiv.className = "project-text";
+  
+      const title = document.createElement("h2");
+      title.textContent = project.name;
+  
+      const abstract = document.createElement("p");
+      abstract.textContent = project.abstract;
+  
+      textDiv.appendChild(title);
+      textDiv.appendChild(abstract);
+  
+      link.appendChild(img);
+      link.appendChild(textDiv);
+      card.appendChild(link);
+  
+      container.appendChild(card);
+    });
   }
   
-  // Build the project page
-  function buildPage(project) {
-    console.log("Project:", project);
+  // ---------- DETAIL PAGE ----------
   
-    const projectSection = document.getElementById("project");
-    if (!projectSection) {
-      console.error('No element with id="project" found in the HTML.');
+  function buildDetailPage(projects, container) {
+    const subdomain = window.location.href.slice(
+      window.location.href.lastIndexOf("/") + 1,
+      window.location.href.lastIndexOf(".")
+    );
+    console.log("Detail subdomain:", subdomain);
+  
+    const project = projects.find((p) => p.subdomain === subdomain);
+    if (!project) {
+      console.error("No project found for subdomain:", subdomain);
       return;
     }
   
-    projectSection.innerHTML += `<h1 id="title">${project.name}</h1>`;
+    // Title
+    const titleEl = document.createElement("h1");
+    titleEl.id = "title";
+    titleEl.textContent = project.name;
+    container.insertBefore(titleEl, container.firstChild);
   
-    // figure out which img folder to use from JSON
-    let folderPath = getFolderPath(project);
-  
-    // Build the carousel
+    // Carousel
+    const folderPath = project.folder;
     buildCarousel(project.images, project.alt_text, folderPath);
   
-    projectSection.innerHTML += `<h2 id="description">${project.description}</h2>`;
+    // Description (goes after the carousel)
+    const descriptionEl = document.createElement("h2");
+    descriptionEl.id = "description";
+    descriptionEl.textContent = project.description;
+    container.appendChild(descriptionEl);
   }
   
-  // Get folder path from the project object
-  function getFolderPath(project) {
-    return project.folder;
-  }
+  // ---------- CAROUSEL ----------
   
-  // Build image carousel
   function buildCarousel(images, altTexts, folderPath) {
     const displayedImage = document.querySelector(".displayed-img");
     const thumbBar = document.querySelector(".thumb-bar");
   
     if (!displayedImage || !thumbBar) {
       console.error(
-        'Carousel elements not found. Make sure you have an <img class="displayed-img"> and a <div class="thumb-bar"> in your HTML.'
+        'Carousel elements not found. Need <img class="displayed-img"> and <div class="thumb-bar"> in the HTML.'
       );
       return;
     }
   
-    // Check if there are images in the array
     if (!images || images.length === 0) {
-      console.log("No images available.");
+      console.log("No images available for this project.");
       return;
     }
   
     const basePath = `../portfolio/img/${folderPath}`;
   
-    // Set the initial displayed image
+    // Initial main image
     displayedImage.src = `${basePath}/${images[0]}.png`;
     displayedImage.alt = altTexts && altTexts[0] ? altTexts[0] : "";
   
-    // Add thumbnails to the thumb-bar
+    // Thumbnails
     images.forEach((image, index) => {
       const newImage = document.createElement("img");
       const imgPath = `${basePath}/${image}.png`;
@@ -81,7 +123,6 @@ let subdomain = window.location.href.slice(
       newImage.src = imgPath;
       newImage.alt = altTexts && altTexts[index] ? altTexts[index] : "";
   
-      // click on the thumbnail to make it the displayed image
       newImage.addEventListener("click", (e) => {
         displayedImage.src = e.target.src;
         displayedImage.alt = e.target.alt;

@@ -75,8 +75,9 @@
         "folder": "mario",
         "abstract": "I designed and modeled a Mario Kart–style burger car in SketchUp, with a sesame bun body, pickle slice wheels, and tomato + cheese details. Using isometric, orthographic, and three-quarter perspective views, I showed the kart from every angle, including close-ups of the wheels and cockpit. A floating box of fries acts like a goofy Mario Kart glider/spoiler, giving the whole vehicle a playful, game-ready personality.",
         "description": "I designed and modeled a Mario Kart–style burger kart in SketchUp, turning a stacked cheeseburger into a fully realized vehicle with pickle slice wheels, tomato steering wheel, and layered bun, patty, and cheese bodywork. To communicate the form clearly, I created a full set of isometric, orthographic, and three-quarter perspective views, plus close-up details of the wheel and cockpit geometry. I also developed a floating fries box “glider” branded with a custom logo, using lighting, shading, and clean linework so the kart feels polished, playful, and game-ready.",
-        "images": ["mario1", "mario3", "mario4", "mario5"],
+        "images": ["mario1", "mario2", "mario3", "mario4", "mario5"],
         "alt_text": [
+          "hamburger style mario cart with french fry umbrella from the front",
           "hamburger style mario cart with french fry umbrella from the front",
           "hamburger style mario cart with french fry umbrella from the front from 6 angles",
           "hamburger style mario cart with french fry umbrella from the front with a zoom on the wheels and another view",
