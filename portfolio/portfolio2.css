@@ -9,7 +9,6 @@ p {
 h1 {
     font-family: "Raleway", sans-serif;
     font-size: clamp(2em, 5vw, 5em);
-    font-weight: bold;
     line-height: 1.2;
     display: inline-block;
     text-align: center;
@@ -18,7 +17,7 @@ h1 {
 
 h2 {
     font-family: "Raleway", sans-serif;
-    font-size: 30px;
+    font-size: 25px;
 }
 
 #project {
@@ -91,10 +90,16 @@ h2 {
     color: black;
     border-radius: 15px; 
     padding: 30px;       
-    text-align: center;  
+    text-align: left;
+
+    /* make it thinner + a bit more readable */
+    font-weight: 400;      /* lighter than default bold */
+    font-size: 22px;       /* slightly smaller, optional */
+    line-height: 1.5;      /* more relaxed line spacing */
 }
 
 /* Back button styles */
+/* Back button */
 a.back-button,
 a.back-button:link,
 a.back-button:visited,
@@ -104,36 +109,31 @@ a.back-button:active {
   align-items: center;
   justify-content: center;
 
-  margin: 20px 40px;
+  margin: 10px 40px 0;   /* was 20px 40px, less top + no bottom gap */
   padding: 8px 18px;
 
-  border-radius: 999px;      /* rounded pill */
+  border-radius: 999px;
   border: none;
-
-  background-color: #3bb89b; /* your green */
-  color: #000 !important;    /* black arrow/text */
+  background-color: #3bb89b;
+  color: #000 !important;
   text-decoration: none !important;
-
   font-family: "Montserrat", sans-serif;
   font-weight: 600;
-
   box-shadow: 0 2px 4px rgba(0,0,0,0.25);
   cursor: pointer;
 }
 
-a.back-button:hover {
-  background-color: #87D8C5; /* hover green */
-  transform: translateY(-1px);
-  box-shadow: 0 4px 8px rgba(0,0,0,0.3);
-}
-
-/* Rounded green box around the project title */
+/* Title box */
 #project h1 {
-    background-color: #3bb89b;   /* same green as your cards */
-    color: #000;                 /* keep the text black */
-    border-radius: 15px;         /* rounded corners */
-    padding: 20px 40px;          /* space around the word */
-    display: inline-block;       /* so the box wraps the text */
-    margin: 40px auto 20px;      /* space above/below */
+    background-color: #3bb89b;
+    color: #000;
+    border-radius: 15px;
+    padding: 20px 40px;
+    display: inline-block;
+    margin: 15px auto 20px;
+  
+    /* slightly bigger than before */
+    font-size: clamp(1.8em, 3.6vw, 3.3em);
   }
+  
   
