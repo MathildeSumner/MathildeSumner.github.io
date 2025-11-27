@@ -35,19 +35,8 @@ function buildPage(project) {
 }
 
 function getFolderPath(project) {
-    const name = project.name.toLowerCase();
+    return project.folder;
 
-    if (name.includes("landscape")) {
-        return "landscapes";
-    } else if (name.includes("ceramic")) {
-        return "ceramics";
-    } else if (name.includes("website")) {
-        return "website";
-    } else if (name.includes("mario")) {
-        return "mario";
-    } else {
-        return "records";
-    }
 
 }
 
