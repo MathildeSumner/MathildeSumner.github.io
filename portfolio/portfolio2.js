@@ -35,16 +35,20 @@ function buildPage(project) {
 }
 
 function getFolderPath(project) {
-    //figure out which img folder to use
-    if (project.name.toLowerCase().includes("landscape")) {
-        return 'landscapes';
-    } else if (project.name.toLowerCase().includes("ceramic")) {
-        return 'ceramics';
-    } else if (project.name.toLowerCase().includes("website")) {
-        return 'website';
+    const name = project.name.toLowerCase();
+
+    if (name.includes("landscape")) {
+        return "landscapes";
+    } else if (name.includes("ceramic")) {
+        return "ceramics";
+    } else if (name.includes("website")) {
+        return "website";
+    } else if (name.includes("mario")) {
+        return "mario";
     } else {
-        return 'records'; 
+        return "records";
     }
+
 }
 
 function buildCarousel(images, altTexts, folderPath) {
