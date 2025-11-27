@@ -1,49 +1,50 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-  <meta charset="utf-8">
-  <title>Portfolio</title>
-  <link rel="stylesheet" href="../portfolio/portfolio.css">
+    <meta charset="utf-8">
+    <title>Portfolio</title>
+    <link rel="stylesheet" href="../portfolio/portfolio.css">
 
-  <!--font stuff-->
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Londrina+Sketch&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!--font stuff-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Sketch&family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
 
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Londrina+Sketch&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Londrina+Sketch&family=Montserrat:ital,wght@0,100..900;1,100..900&family=Open+Sans:ital,wght@0,300..800;1,300..800&family=Raleway:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <!--font stuff-->
+
 </head>
 <body>
-  <header>
-    <h1 id="title">Mathilde Sumner</h1>
-  </header>
+    <header>
+        <h1 id="title">Mathilde Sumner</h1>
+    </header>
+    <section id="about">
+        <div class="about-container">
+            <img src="/img/TillyPic.jpeg" alt="a photo of me in white dress">
+            <div class="about-text">
+                <h2>About Me!</h2>
+                <p>My pronouns are she/her</p>
+                <p>I'm a Creative Technology and Design major, currently in my sophomore year of college.</p>
+                <p>I was born in New Orleans but grew up in Denver.</p>
+                <p>I love to paint and hang out with my friends.</p>
+                <p>I have the cutest dog in the world, His name is Winston and he's a one-year-old Pembroke Welsh Corgi.</p>
+            </div>
+        </div>
+    </section>
 
-  <section id="about">
-    <div class="about-container">
-      <img src="/img/TillyPic.jpeg" alt="a photo of me in white dress">
-      <div class="about-text">
-        <h2>About Me!</h2>
-        <p>My pronouns are she/her</p>
-        <p>I'm a Creative Technology and Design major, currently in my sophomore year of college.</p>
-        <p>I was born in New Orleans but grew up in Denver.</p>
-        <p>I love to paint and hang out with my friends.</p>
-        <p>I have the cutest dog in the world, his name is Winston and he's a one-year-old Pembroke Welsh Corgi.</p>
-      </div>
+    <div id="buttons">
+        <button type="button" value="PhysicalArt">Physical Art</button>
+        <button type="button" value="DigitalDesign">Digital Design</button>
+        <button type="button" value="WebDesign">Web Design</button>
+        <button type="button" value="clear">Clear</button>
     </div>
-  </section>
 
-  <div id="buttons">
-    <button type="button" value="PhysicalArt">Physical Art</button>
-    <button type="button" value="DigitalDesign">Digital Design</button>
-    <button type="button" value="WebDesign">Web Design</button>
-    <button type="button" value="clear">Clear</button>
-  </div>
+    <section id="projects">
+        <!-- Project cards will be dynamically inserted here -->
+    </section>
 
-  <section id="projects">
-    <!-- Project cards are injected here by portfolio.js -->
-  </section>
-
-  <script src="../portfolio/portfolio.js" defer></script>
+    <script src="../portfolio/portfolio.js"></script>
 </body>
 </html>

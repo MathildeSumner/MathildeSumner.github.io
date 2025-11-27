@@ -1,6 +1,6 @@
-// Run after DOM is ready
 document.addEventListener("DOMContentLoaded", () => {
-    fetch("../portfolio/portfolio.json")
+    // portfolio.js lives in /portfolio, so this hits /portfolio/portfolio.json
+    fetch("portfolio.json")
       .then((response) => response.json())
       .then((data) => {
         const projects = data.projects;
@@ -8,12 +8,13 @@ document.addEventListener("DOMContentLoaded", () => {
         const listContainer = document.getElementById("projects");
         const detailContainer = document.getElementById("project");
   
-        // If we're on the main portfolio page
+        // Main portfolio page
         if (listContainer) {
           buildIndexPage(projects, listContainer);
+          setupFilterButtons();
         }
   
-        // If we're on a project detail page
+        // Individual project detail pages
         if (detailContainer) {
           buildDetailPage(projects, detailContainer);
         }
@@ -21,26 +22,37 @@ document.addEventListener("DOMContentLoaded", () => {
       .catch((err) => console.log(`Error: ${err}`));
   });
   
-  // ---------- MAIN INDEX PAGE ----------
+  // ---------- MAIN INDEX PAGE (home screen) ----------
   
   function buildIndexPage(projects, container) {
     projects.forEach((project) => {
-      const card = document.createElement("article");
-      card.className = "project-card";
-  
+      // This <a> is the whole card row
       const link = document.createElement("a");
-      link.className = "project-link";
       link.href = `${project.subdomain}.html`;
+      link.className = "row project";
+      link.id = project.subdomain;
+      link.dataset.category = (project.category || []).join(",");
   
-      // Cover image
+      // Image column
+      const imgDiv = document.createElement("div");
+      imgDiv.className = "projimg";
+  
       const img = document.createElement("img");
-      img.className = "project-cover";
-      img.src = `../portfolio/img/${project.folder}/${project.images[0]}.png`;
-      img.alt = project.alt_text && project.alt_text[0] ? project.alt_text[0] : project.name;
+      // portfolio.html is in /portfolio, so this points to /portfolio/img/...
+      const imgPath = `img/${project.folder}/${project.images[0]}.png`;
+      console.log("Card image for", project.name, "->", imgPath);
   
-      // Text block
-      const textDiv = document.createElement("div");
-      textDiv.className = "project-text";
+      img.src = imgPath;
+      img.alt =
+        project.alt_text && project.alt_text[0]
+          ? project.alt_text[0]
+          : project.name;
+  
+      imgDiv.appendChild(img);
+  
+      // Text column
+      const descDiv = document.createElement("div");
+      descDiv.className = "description";
   
       const title = document.createElement("h2");
       title.textContent = project.name;
@@ -48,14 +60,36 @@ document.addEventListener("DOMContentLoaded", () => {
       const abstract = document.createElement("p");
       abstract.textContent = project.abstract;
   
-      textDiv.appendChild(title);
-      textDiv.appendChild(abstract);
+      descDiv.appendChild(title);
+      descDiv.appendChild(abstract);
   
-      link.appendChild(img);
-      link.appendChild(textDiv);
-      card.appendChild(link);
+      // Assemble card
+      link.appendChild(imgDiv);
+      link.appendChild(descDiv);
+      container.appendChild(link);
+    });
+  }
   
-      container.appendChild(card);
+  // Category filter buttons (PhysicalArt / DigitalDesign / WebDesign / clear)
+  function setupFilterButtons() {
+    const buttons = document.querySelectorAll("#buttons button");
+    const cards = document.querySelectorAll(".row.project");
+  
+    if (!buttons.length || !cards.length) return;
+  
+    buttons.forEach((btn) => {
+      btn.addEventListener("click", () => {
+        const value = btn.value;
+  
+        cards.forEach((card) => {
+          const categories = (card.dataset.category || "").split(",");
+          if (value === "clear" || value === "" || categories.includes(value)) {
+            card.style.display = "";
+          } else {
+            card.style.display = "none";
+          }
+        });
+      });
     });
   }
   
@@ -74,17 +108,16 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
   
-    // Title
+    // Title inside the peach card section
     const titleEl = document.createElement("h1");
-    titleEl.id = "title";
+    titleEl.id = "project-title";
     titleEl.textContent = project.name;
     container.insertBefore(titleEl, container.firstChild);
   
-    // Carousel
-    const folderPath = project.folder;
-    buildCarousel(project.images, project.alt_text, folderPath);
+    // Carousel (uses pre-existing .displayed-img + .thumb-bar)
+    buildCarousel(project.images, project.alt_text, project.folder);
   
-    // Description (goes after the carousel)
+    // Description (peach card text)
     const descriptionEl = document.createElement("h2");
     descriptionEl.id = "description";
     descriptionEl.textContent = project.description;
@@ -109,7 +142,8 @@ document.addEventListener("DOMContentLoaded", () => {
       return;
     }
   
-    const basePath = `../portfolio/img/${folderPath}`;
+    // Detail pages are also in /portfolio/
+    const basePath = `img/${folderPath}`;
   
     // Initial main image
     displayedImage.src = `${basePath}/${images[0]}.png`;
