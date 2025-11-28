@@ -34,7 +34,36 @@
         "hamburger style mario cart with french fry umbrella from the front with a zoom on the steering wheel and the side"
       ]
     },
-
+    {
+      "name": "Animation",
+      "subdomain": "animation",
+      "category": ["DigitalDesign"],
+      "folder": "animation",
+      "abstract": "This project is ",
+      "description": "",
+      "images": ["animation1", "animation2", "animation3", "animation4"],
+      "alt_text": [
+        "hamburger style mario cart with french fry umbrella from the front",
+        "hamburger style mario cart with french fry umbrella from the front from 6 angles",
+        "hamburger style mario cart with french fry umbrella from the front with a zoom on the wheels and another view",
+        "hamburger style mario cart with french fry umbrella from the front with a zoom on the steering wheel and the side"
+      ]
+    },
+    {
+      "name": "Garbage Crush",
+      "subdomain": "garbage_crush",
+      "category": ["DigitalDesign"],
+      "folder": "garbage_crush",
+      "abstract": "This project is ",
+      "description": "",
+      "images": ["garbage_crush1", "garbage_crush2", "garbage_crush3", "garbage_crush4","garbage_crush5"],
+      "alt_text": [
+        "hamburger style mario cart with french fry umbrella from the front",
+        "hamburger style mario cart with french fry umbrella from the front from 6 angles",
+        "hamburger style mario cart with french fry umbrella from the front with a zoom on the wheels and another view",
+        "hamburger style mario cart with french fry umbrella from the front with a zoom on the steering wheel and the side"
+      ]
+    },
     {
       "name": "Records",
       "subdomain": "Records",
