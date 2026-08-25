@@ -1,0 +1,253 @@
+/* -----------------------------
+   RESET
+----------------------------- */
+
+* {
+    box-sizing: border-box;
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    background: #e8add7;
+    color: #191919;
+    font-family: Georgia, serif;
+    line-height: 1.6;
+}
+
+
+/* -----------------------------
+   HEADER
+----------------------------- */
+
+.site-header {
+    width: min(1100px, 90%);
+    margin: 0 auto;
+    padding: 80px 0 70px;
+    border-bottom: 2px solid #191919;
+}
+
+.eyebrow {
+    font-family: Arial, sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.18em;
+    font-weight: bold;
+    margin-bottom: 20px;
+}
+
+.site-header h1 {
+    font-family: Arial, sans-serif;
+    font-size: clamp(3rem, 7vw, 6rem);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    text-transform: uppercase;
+    white-space: nowrap;
+}
+
+.description {
+    max-width: 520px;
+    margin-top: 35px;
+    font-size: 1.1rem;
+}
+
+
+/* -----------------------------
+   BLOG
+----------------------------- */
+
+.blog {
+    width: min(1100px, 90%);
+    margin: 0 auto;
+}
+
+
+/* -----------------------------
+   BLOG POST
+----------------------------- */
+
+.blog-post {
+    display: block;
+    width: 100%;
+    border-bottom: 2px solid #191919;
+}
+
+
+/* -----------------------------
+   CLICKABLE POST HEADER
+----------------------------- */
+
+.post-title {
+    display: flex;
+    align-items: center;
+    width: 100%;
+    padding: 45px 0;
+    cursor: pointer;
+    list-style: none;
+}
+
+/* Removes browser's default triangle */
+
+.post-title::-webkit-details-marker {
+    display: none;
+}
+
+.post-title::marker {
+    display: none;
+}
+
+
+/* -----------------------------
+   TITLE INFORMATION
+----------------------------- */
+
+.title-info {
+    display: grid;
+    grid-template-columns: 100px 1fr auto;
+    align-items: center;
+    gap: 30px;
+    width: 100%;
+}
+
+.post-number {
+    font-family: Arial, sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.12em;
+    font-weight: bold;
+    white-space: nowrap;
+}
+
+.post-title h2 {
+    font-family: Arial, sans-serif;
+    font-size: clamp(2.5rem, 5vw, 4rem);
+    line-height: 1;
+    letter-spacing: -0.04em;
+    margin: 0;
+}
+
+.post-date {
+    font-family: Georgia, serif;
+    font-size: 1rem;
+    font-style: italic;
+    white-space: nowrap;
+}
+
+
+/* -----------------------------
+   PLUS / CLOSE SYMBOL
+----------------------------- */
+
+.plus {
+    font-family: Arial, sans-serif;
+    font-size: 2.5rem;
+    font-weight: 300;
+    line-height: 1;
+    margin-left: 30px;
+    transition: transform 0.2s ease;
+}
+
+.blog-post[open] .plus {
+    transform: rotate(45deg);
+}
+
+
+/* -----------------------------
+   EXPANDED POST CONTENT
+----------------------------- */
+
+.post-content {
+    padding: 10px 0 70px 130px;
+}
+
+
+
+
+.image-gallery {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 15px;
+    margin-bottom: 40px;
+}
+
+.image-gallery img {
+    width: 100%;
+    height: 300px;
+    object-fit: cover;
+    display: block;
+}
+
+
+
+
+.post-text {
+    max-width: 750px;
+}
+
+.post-text p {
+    font-size: 1.1rem;
+    line-height: 1.7;
+    margin-bottom: 22px;
+}
+
+
+
+
+.post-title:hover h2 {
+    font-style: bold;
+}
+
+
+
+
+footer {
+    width: min(1100px, 90%);
+    margin: 0 auto;
+    padding: 40px 0 80px;
+
+    font-family: Arial, sans-serif;
+    font-size: 0.75rem;
+    letter-spacing: 0.08em;
+}
+
+
+
+
+@media (max-width: 700px) {
+
+    .site-header {
+        padding: 60px 0;
+    }
+
+    .site-header h1 {
+        font-size: 3rem;
+        white-space: normal;
+    }
+
+    .post-title {
+        padding: 30px 0;
+    }
+
+    .title-info {
+        grid-template-columns: 1fr;
+        gap: 8px;
+    }
+
+    .post-title h2 {
+        font-size: 2.5rem;
+    }
+
+    .post-date {
+        margin-top: 5px;
+    }
+
+    .plus {
+        margin-left: 15px;
+    }
+
+    .post-content {
+        padding: 0 0 50px;
+    }
+
+    .post-text p {
+        font-size: 1rem;
+    }
+}
