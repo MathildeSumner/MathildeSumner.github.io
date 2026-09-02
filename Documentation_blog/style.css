@@ -102,16 +102,16 @@ body {
 
 .title-info {
     display: grid;
-    grid-template-columns: 100px 1fr auto;
+    grid-template-columns: 150px 1fr;
     align-items: center;
-    gap: 30px;
+    gap: 15px;
     width: 100%;
 }
 
 .post-number {
     font-family: Arial, sans-serif;
-    font-size: 0.75rem;
-    letter-spacing: 0.12em;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
     font-weight: bold;
     white-space: nowrap;
 }
